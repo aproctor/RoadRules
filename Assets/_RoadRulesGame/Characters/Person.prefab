@@ -67,6 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4026143950411190}
+  - component: {fileID: 114710138185905530}
   m_Layer: 0
   m_Name: person
   m_TagString: Untagged
@@ -381,6 +382,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 3, z: 0.3}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &114710138185905530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278437522932220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f159987a6233d422cb80149232a3b5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionInput: 
+  OnReset:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212156215171391244
 SpriteRenderer:
   m_ObjectHideFlags: 1

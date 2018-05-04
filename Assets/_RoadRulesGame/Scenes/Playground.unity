@@ -15994,7 +15994,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f159987a6233d422cb80149232a3b5b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InstructionInput: 
+  instructionInput: 
+  OnReset:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &209649453
 Prefab:
   m_ObjectHideFlags: 0
