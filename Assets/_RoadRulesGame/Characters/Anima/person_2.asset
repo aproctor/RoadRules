@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: person_2
   m_EditorClassIdentifier: 
   m_ApiVersion: 4
-  m_Sprite: {fileID: 21300004, guid: 92b767e9d901cca419d2201b4bcfb95b, type: 3}
-  m_SharedMesh: {fileID: 43055713296825502}
+  m_Sprite: {fileID: 21300004, guid: 17cc56850898545739f88b18cba48498, type: 3}
+  m_SharedMesh: {fileID: 43191676000382018}
   pivotPoint: {x: 0, y: 0}
   texVertices: []
   edges: []
@@ -21,7 +21,7 @@ MonoBehaviour:
   indices: 
   bindPoses: []
   m_SharedMaterials: []
---- !u!43 &43055713296825502
+--- !u!43 &43191676000382018
 Mesh:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,7 +37,7 @@ Mesh:
     firstVertex: 0
     vertexCount: 5
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
+      m_Center: {x: -0.20611918, y: 0.0068707243, z: 0}
       m_Extent: {x: 0.28, y: 0.18, z: 0}
   m_Shapes:
     vertices: []
@@ -147,7 +147,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 248
-    _typelessdata: ae47613eec51383e000000000000000000000000000080bf0000803f521bccb100000000000080bf295c8f3eec5138be000000000000000000000000000080bf0000803f1d87c9b000000000000080bf295c8f3e295c0f3e000000000000000000000000000080bf0000803f555505b400000000000080bf295c8fbeec51383e000000000000000000000000000080bf0000803f0000000000000000000080bf295c8fbeec5138be000000000000000000000000000080bf0000803f0000000000000000000080bf00000000000000000000683e00002c3f0000803e0000083f0000803e0000283f0000003d00002c3f0000003d0000083f
+    _typelessdata: 526c633c0a5b3f3e000000000000000000000000000080bf0000803f551bcc3100000000000080bfd24e973dcd4831be000000000000000000000000000080bf0000803f1d87c93000000000000080bfd24e973d4865163e000000000000000000000000000080bf0000803f5555053400000000000080bf9de4f8be0a5b3f3e000000000000000000000000000080bf0000803f0000000000000000000080bf9de4f8becd4831be000000000000000000000000000080bf0000803f0000000000000000000080bf00000000000000000000683e00002c3f0000803e0000083f0000803e0000283f0000003d00002c3f0000003d0000083f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -201,13 +201,13 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
+    m_Center: {x: -0.20611918, y: 0.0068707243, z: 0}
     m_Extent: {x: 0.28, y: 0.18, z: 0}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!114 &114444268363220212
+--- !u!114 &114028362320130624
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -218,14 +218,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e715ea371f114f4a8d2584ad476634d, type: 3}
   m_Name: person_2_Data
   m_EditorClassIdentifier: 
-  m_PivotPoint: {x: 36, y: 154}
+  m_PivotPoint: {x: 56.61192, y: 153.31293}
   m_Vertices:
   - {x: 58, y: 172}
   - {x: 64, y: 136}
   - {x: 64, y: 168}
   - {x: 8, y: 172}
   - {x: 8, y: 136}
-  m_BoneWeights: []
+  m_BoneWeights:
+  - weight0: 0
+    weight1: 0
+    weight2: 0
+    weight3: 0
+    boneIndex0: -1
+    boneIndex1: -1
+    boneIndex2: -1
+    boneIndex3: -1
+  - weight0: 0
+    weight1: 0
+    weight2: 0
+    weight3: 0
+    boneIndex0: -1
+    boneIndex1: -1
+    boneIndex2: -1
+    boneIndex3: -1
+  - weight0: 0
+    weight1: 0
+    weight2: 0
+    weight3: 0
+    boneIndex0: -1
+    boneIndex1: -1
+    boneIndex2: -1
+    boneIndex3: -1
+  - weight0: 0
+    weight1: 0
+    weight2: 0
+    weight3: 0
+    boneIndex0: -1
+    boneIndex1: -1
+    boneIndex2: -1
+    boneIndex3: -1
+  - weight0: 0
+    weight1: 0
+    weight2: 0
+    weight3: 0
+    boneIndex0: -1
+    boneIndex1: -1
+    boneIndex2: -1
+    boneIndex3: -1
   m_Edges:
   - index1: 4
     index2: 3

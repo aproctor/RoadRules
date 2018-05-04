@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 92b767e9d901cca419d2201b4bcfb95b
+guid: 17cc56850898545739f88b18cba48498
 TextureImporter:
   fileIDToRecycleName:
     21300000: person_0
@@ -95,7 +95,7 @@ TextureImporter:
         width: 84
         height: 84
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.49616787, y: 0.07463837}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -115,7 +115,7 @@ TextureImporter:
         width: 96
         height: 153
       alignment: 9
-      pivot: {x: 0.5052084, y: 0.5}
+      pivot: {x: 0.5052084, y: 0.077882454}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,7 +135,7 @@ TextureImporter:
         width: 66
         height: 46
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.8123018, y: 0.48506364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +155,7 @@ TextureImporter:
         width: 44
         height: 92
       alignment: 9
-      pivot: {x: 0.5, y: 0.49456522}
+      pivot: {x: 0.46876973, y: 0.8306291}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,7 +175,7 @@ TextureImporter:
         width: 38
         height: 81
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.48191935, y: 0.78839725}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,6 +195,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  userData: 
+  userData: 636610527980000000
   assetBundleName: 
   assetBundleVariant: 
