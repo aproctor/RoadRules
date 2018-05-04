@@ -20,7 +20,6 @@ namespace RoadRules {
     [Header("Statefullness")]
     private bool alive = true;
     public UnityEvent OnReset;
-    public UnityEvent OnDie;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
@@ -44,7 +43,7 @@ namespace RoadRules {
           Run(instructions[instructionIndex].instruction);
 
           lastInstruction = instructions[instructionIndex].instruction;
-          repeatCount = instructions[instructionIndex].arg0;
+          repeatCount = instructions[instructionIndex].arg0 - 1;
           instructionIndex += 1;
         }
       }
@@ -61,7 +60,6 @@ namespace RoadRules {
 
     public void Die() {
       alive = false;
-      OnDie.Invoke();
     }
 
     public void Reset() {

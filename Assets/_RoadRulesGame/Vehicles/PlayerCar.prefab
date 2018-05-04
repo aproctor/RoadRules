@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4867882528948258}
   - component: {fileID: 33894924359247774}
   - component: {fileID: 23557982002598102}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,10 +38,10 @@ GameObject:
   - component: {fileID: 4063573146255962}
   - component: {fileID: 114411105558449188}
   - component: {fileID: 65782820330452542}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerCar
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4766990522353594}
   - component: {fileID: 33817804125049402}
   - component: {fileID: 23375469727664244}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4858404295735640}
   - component: {fileID: 33628208861816242}
   - component: {fileID: 23607473103753536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4870228112180904}
   - component: {fileID: 33536383788420962}
   - component: {fileID: 23891894395908684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4898505161571626}
   - component: {fileID: 33124795759441146}
   - component: {fileID: 23414343589978378}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  instructionInput: 
+  instructionInput: 'wait 5
+
+    forward 2'
   instructionIndex: 0
   OnReset:
     m_PersistentCalls:
@@ -442,3 +444,4 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  debugState: 1
