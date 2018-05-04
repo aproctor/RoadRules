@@ -9,24 +9,39 @@ namespace RoadRules {
 
     [Test]
     public void TestCommandsList() {
-      Assert.True(CommandProcessor.ValidateInstruction("forward"));
-      Assert.True(CommandProcessor.ValidateInstruction("forward 1"));
-      Assert.True(CommandProcessor.ValidateInstruction("forward -1"));
-      Assert.True(CommandProcessor.ValidateInstruction("forward 100"));
-      Assert.False(CommandProcessor.ValidateInstruction("forward 100 40"));
-      Assert.False(CommandProcessor.ValidateInstruction("forward qq"));
+      Assert.True(CommandProcessor.ValidateCommand("forward"));
+      Assert.True(CommandProcessor.ValidateCommand("forward 1"));
+      Assert.True(CommandProcessor.ValidateCommand("forward -1"));
+      Assert.True(CommandProcessor.ValidateCommand("forward 100"));
+      Assert.False(CommandProcessor.ValidateCommand("forward 100 40"));
+      Assert.False(CommandProcessor.ValidateCommand("forward qq"));
 
-      Assert.True(CommandProcessor.ValidateInstruction("wait"));
-      Assert.True(CommandProcessor.ValidateInstruction("wait 1"));
-      Assert.True(CommandProcessor.ValidateInstruction("wait -1"));
-      Assert.True(CommandProcessor.ValidateInstruction("wait 100"));
-      Assert.False(CommandProcessor.ValidateInstruction("wait 100 40"));
-      Assert.False(CommandProcessor.ValidateInstruction("wait qq"));
+      Assert.True(CommandProcessor.ValidateCommand("wait"));
+      Assert.True(CommandProcessor.ValidateCommand("wait 1"));
+      Assert.True(CommandProcessor.ValidateCommand("wait -1"));
+      Assert.True(CommandProcessor.ValidateCommand("wait 100"));
+      Assert.False(CommandProcessor.ValidateCommand("wait 100 40"));
+      Assert.False(CommandProcessor.ValidateCommand("wait qq"));
 
-      Assert.True(CommandProcessor.ValidateInstruction("left"));
-      Assert.True(CommandProcessor.ValidateInstruction("right"));
+      Assert.True(CommandProcessor.ValidateCommand("left"));
+      Assert.True(CommandProcessor.ValidateCommand("right"));
 
-      Assert.False(CommandProcessor.ValidateInstruction("fubar"));
+      Assert.False(CommandProcessor.ValidateCommand("fubar"));
+    }
+
+    [Test]
+    public void TestBlobInput() {
+      string input = "";
+      Assert.True(CommandProcessor.ParseCommands(input).Count == 0);
+
+      input = "#it doesn't look like anything to me\n";
+      Assert.True(CommandProcessor.ParseCommands(input).Count == 0);
+
+      input = "forward 20\nwait 10\n\n\n";
+      Assert.True(CommandProcessor.ParseCommands(input).Count == 2);
+
+      input = "invalid";
+      Assert.True(CommandProcessor.ParseCommands(input).Count == 0);
     }
   }
 }

@@ -6,7 +6,8 @@ using System.Text.RegularExpressions;
 namespace RoadRules {
   public static class CommandProcessor {
 
-    public static string HALT = "halt";
+    private static char[] NEW_LINE_SPLIT = { '\n' };
+    public static Command HALT = new CommandProcessor.Command("halt");
     private static char[] SPACE_SPLIT = { ' ' };
 
     public static Regex[] COMMAND_LIST = {
@@ -29,7 +30,7 @@ namespace RoadRules {
       }
     }
 
-    public static bool ValidateInstruction(string instruction) {
+    public static bool ValidateCommand(string instruction) {
       Debug.LogFormat("Validating: {0}",instruction);
       return ParseCommand(instruction) != null;
     }
@@ -43,6 +44,27 @@ namespace RoadRules {
       }
 
       return null;
+    }
+
+    public static List<Command> ParseCommands(string instructionInput) {
+      List<Command> instructions = new List<CommandProcessor.Command>();
+
+      string[] lines = instructionInput.Split(NEW_LINE_SPLIT);
+      foreach (string line in lines) {
+        string trimmed = line.Trim().ToLower();
+        if (trimmed.Length == 0 || trimmed.StartsWith("#")) {
+          continue;
+        }
+        Command command = ParseCommand(trimmed);
+        if (command != null) {
+          instructions.Add(command);
+        } else {
+          Debug.LogWarningFormat("Ignoring invalid instruction <{0}>", trimmed);
+          instructions.Add(CommandProcessor.HALT);
+        }
+      }
+
+      return instructions;
     }
 
 

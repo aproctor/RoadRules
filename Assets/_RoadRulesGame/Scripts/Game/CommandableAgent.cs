@@ -14,10 +14,10 @@ namespace RoadRules {
     [Header("Instructions")]
     [TextArea]
     public string instructionInput;
-    private int instructionIndex = 0;
+    public int instructionIndex = 0;  //Look but don't touch
     private string lastInstruction = "";
     private int repeatCount = 0; //How many times we'll repeat the last instruction
-    private List<string> instructions;
+    private List<CommandProcessor.Command> instructions;
 
     [Header("Statefullness")]
     private bool alive = true;
@@ -38,19 +38,7 @@ namespace RoadRules {
     public void Begin() {
       //Parse instructions
       string[] lines = instructionInput.Split(NEW_LINE_SPLIT);
-      instructions = new List<string>();
-      foreach (string line in lines) {        
-        string trimmed = line.Trim().ToLower();
-        if(trimmed.Length == 0 || trimmed.StartsWith("#")) {
-          continue;
-        }
-        if (CommandProcessor.ValidateInstruction(trimmed)) {
-          instructions.Add(trimmed);
-        } else {
-          Debug.LogWarningFormat("Ignoring invalid instruction <{0}>",trimmed);
-          instructions.Add(CommandProcessor.HALT);
-        }
-      }
+      instructions = CommandProcessor.ParseCommands(instructionInput);
     }
 
     public void Tick() {
@@ -58,9 +46,11 @@ namespace RoadRules {
         if (repeatCount > 0) {
           Run(lastInstruction);
         } else if (instructionIndex < instructions.Count) {
-          //if(parts[0] == "forward") {
-            
-          //}
+          Run(instructions[instructionIndex].instruction);
+
+          lastInstruction = instructions[instructionIndex].instruction;
+          repeatCount = instructions[instructionIndex].arg0;
+          instructionIndex += 1;
         } else {
           Debug.Log("Done instructions waiting", this);
         }
