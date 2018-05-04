@@ -9,8 +9,8 @@ namespace RoadRules {
 
     [Test]
     public void TestCommandsList() {
-      Debug.Log("test");
-      Assert.True(true);
+      Assert.True(CommandProcessor.ValidateInstruction("forward"));
+      Assert.True(CommandProcessor.ValidateInstruction("wait"));
     }
   }
 }
