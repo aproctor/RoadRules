@@ -115,12 +115,12 @@ GameObject:
   m_Component:
   - component: {fileID: 523}
   m_Layer: 0
-  m_Name: Vehicles
+  m_Name: ReferenceVehicles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &237
 GameObject:
   m_ObjectHideFlags: 0
@@ -15978,6 +15978,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3198cf8c1d7ab4e66816c71b41a39b59, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &209560079 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1278437522932220, guid: 3198cf8c1d7ab4e66816c71b41a39b59,
+    type: 2}
+  m_PrefabInternal: {fileID: 209560078}
+--- !u!114 &209560080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 209560079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f159987a6233d422cb80149232a3b5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InstructionInput: 
 --- !u!1001 &209649453
 Prefab:
   m_ObjectHideFlags: 0
