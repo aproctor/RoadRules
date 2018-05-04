@@ -7,8 +7,8 @@ namespace RoadRules {
   public static class CommandProcessor {
 
     public static Regex[] COMMAND_LIST = {
-      new Regex(@"^forward(\d+)?$"),
-      new Regex(@"^wait( \d+)?$"),
+      new Regex(@"^forward( -?\d+)?$"),
+      new Regex(@"^wait( -?\d+)?$"),
       new Regex("^right$"),
       new Regex("^left$")
     };
@@ -17,13 +17,13 @@ namespace RoadRules {
       Debug.LogFormat("Validating: {0}",instruction);
       foreach (Regex command in COMMAND_LIST) {
         Match match = command.Match(instruction);
-        if (match != null) {
-          Debug.LogError("Match <"+match.ToString()+">");
+        if (match != null && match.Success) {
           return true;
         }
       }
       return false;
     }
+
 
   }
 }
