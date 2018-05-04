@@ -7,8 +7,6 @@ namespace RoadRules {
 
   public class CommandableAgent : MonoBehaviour {
 
-    private static char[] NEW_LINE_SPLIT = { '\n' };
-
     public float moveSpeed = 1f;
 
     [Header("Instructions")]
@@ -30,14 +28,10 @@ namespace RoadRules {
     private void Awake() {
       this.originalPosition = this.transform.position;
       this.originalRotation = this.transform.rotation;
-
-      //TODO call this from an external method
-      Begin();
     }
 
     public void Begin() {
       //Parse instructions
-      string[] lines = instructionInput.Split(NEW_LINE_SPLIT);
       instructions = CommandProcessor.ParseCommands(instructionInput);
     }
 
@@ -45,20 +39,23 @@ namespace RoadRules {
       if (alive) {
         if (repeatCount > 0) {
           Run(lastInstruction);
+          repeatCount -= 1;
         } else if (instructionIndex < instructions.Count) {
           Run(instructions[instructionIndex].instruction);
 
           lastInstruction = instructions[instructionIndex].instruction;
           repeatCount = instructions[instructionIndex].arg0;
           instructionIndex += 1;
-        } else {
-          Debug.Log("Done instructions waiting", this);
         }
       }
+      DebugStateLabel();
     }
 
     private void Run(string instruction) {
-      
+      if(instruction == "forward") {
+        //TODO nicer movement
+        this.transform.position = this.transform.position + this.transform.forward;
+      }
     }
 
 
@@ -75,6 +72,31 @@ namespace RoadRules {
       alive = true;
       OnReset.Invoke();
     }
+
+
+
+#region editor_tools
+    public bool debugState = false;
+    private string initialName = null;
+
+    private void DebugStateLabel() {
+#if UNITY_EDITOR
+      if (debugState) {
+        if (initialName == null) {
+          initialName = this.gameObject.name;
+        }
+        if (alive) {
+          this.gameObject.name = string.Format("{0} {1} [{2}]", initialName, lastInstruction, repeatCount);
+        } else {
+          this.gameObject.name = string.Format("{0} [dead]", initialName);
+        }
+      }
+
+#endif
+    }
+
+#endregion
+
 
   }
 }
