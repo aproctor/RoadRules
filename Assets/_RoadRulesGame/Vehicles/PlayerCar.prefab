@@ -579,12 +579,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f159987a6233d422cb80149232a3b5b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  instructionInput: 'forward 1
+  moveSpeed: 7
+  instructionInput: 'forward
 
-    left
+    right
 
-    forward 3'
+    goto 0'
   instructionIndex: 0
   repeatCount: 0
   OnReset:

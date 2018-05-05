@@ -26,10 +26,12 @@ namespace RoadRules {
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Vector3 targetPosition;
+    private Animator animator;
 
     private void Awake() {
       this.originalPosition = this.transform.position;
       this.originalRotation = this.transform.rotation;
+      this.animator = this.GetComponent<Animator>();
     }
 
     public void Begin() {
@@ -59,6 +61,13 @@ namespace RoadRules {
       DebugStateLabel();
     }
 
+    public void Celebrate() {
+      Halt();
+      if(this.animator != null) {
+        this.animator.SetBool("Celebrate",true);
+      }
+    }
+
     public void Halt() {
       moving = false;
       instructionIndex = instructions.Count;
@@ -85,7 +94,6 @@ namespace RoadRules {
     void Update() {
       if(alive && moving) {
         this.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
-        //moving = false;
       }
     }
 
@@ -97,6 +105,9 @@ namespace RoadRules {
     public void Reset() {
       this.transform.position = originalPosition;
       this.transform.rotation = originalRotation;
+      if (this.animator != null) {
+        this.animator.SetBool("Celebrate", false);
+      }
       instructionIndex = 0;
       repeatCount = 0;
       alive = true;

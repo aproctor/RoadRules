@@ -36,7 +36,7 @@ namespace RoadRules {
         if (IsPuzzleComplete()) {
           Debug.Log("YOU WIN");
           foreach (CommandableAgent agent in agents) {
-            agent.Halt();
+            agent.Celebrate();
           }
           OnPuzzleComplete.Invoke();
           state = PlayState.Complete;
