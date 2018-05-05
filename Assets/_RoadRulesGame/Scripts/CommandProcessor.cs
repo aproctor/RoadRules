@@ -14,7 +14,8 @@ namespace RoadRules {
       new Regex(@"^forward( -?\d+)?$"),
       new Regex(@"^wait( -?\d+)?$"),
       new Regex("^right$"),
-      new Regex("^left$")
+      new Regex("^left$"),
+      new Regex(@"^goto \d+$")  //please no raptors
     };
 
     public class Command {

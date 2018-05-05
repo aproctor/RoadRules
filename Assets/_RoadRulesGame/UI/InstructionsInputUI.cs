@@ -22,6 +22,7 @@ namespace RoadRules {
     public Text caratLabel;
 
     public GameObject gameOverUi;
+    public GameObject helpSection;
 
     void Awake() {
       this.inputScript.text = targettedAgent.instructionInput;
@@ -66,6 +67,10 @@ namespace RoadRules {
 
       playing = true;
       this.puzzleMaster.Play();
+    }
+
+    public void HelpButtonClicked() {
+      this.helpSection.SetActive(!this.helpSection.activeSelf);
     }
 
     private void ApplyScript() {

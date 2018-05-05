@@ -26,6 +26,10 @@ namespace RoadRules {
       Assert.True(CommandProcessor.ValidateCommand("left"));
       Assert.True(CommandProcessor.ValidateCommand("right"));
 
+      Assert.True(CommandProcessor.ValidateCommand("goto 12"));
+      Assert.False(CommandProcessor.ValidateCommand("goto -1"));
+      Assert.False(CommandProcessor.ValidateCommand("goto"));
+
       Assert.False(CommandProcessor.ValidateCommand("fubar"));
     }
 
