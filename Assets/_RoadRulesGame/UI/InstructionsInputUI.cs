@@ -76,6 +76,10 @@ namespace RoadRules {
     private void ApplyScript() {
       this.targettedAgent.instructionInput = this.inputScript.text;
     }
+
+    public void NextPuzzleClicked() {
+      SceneLoader.LoadNextScene();
+    }
   }
 
 }

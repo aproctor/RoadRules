@@ -59,6 +59,11 @@ namespace RoadRules {
       DebugStateLabel();
     }
 
+    public void Halt() {
+      moving = false;
+      instructionIndex = instructions.Count;
+    }
+
     private void Run(string instruction) {
       if(instruction == "forward") {
         //TODO nicer movement
