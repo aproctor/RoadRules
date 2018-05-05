@@ -9,20 +9,24 @@ namespace RoadRules {
 
     public float moveSpeed = 1f;
 
+
     [Header("Instructions")]
     [TextArea]
     public string instructionInput;
     public int instructionIndex = 0;  //Look but don't touch
     private string lastInstruction = "";
-    private int repeatCount = 0; //How many times we'll repeat the last instruction
+    public int repeatCount = 0; //How many times we'll repeat the last instruction
     private List<CommandProcessor.Command> instructions;
 
     [Header("Statefullness")]
     private bool alive = true;
+    private bool moving = false;
     public UnityEvent OnReset;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    private Rigidbody _rigidbody;
+    private Vector3 targetPosition;
 
     private void Awake() {
       this.originalPosition = this.transform.position;
@@ -53,7 +57,20 @@ namespace RoadRules {
     private void Run(string instruction) {
       if(instruction == "forward") {
         //TODO nicer movement
-        this.transform.position = this.transform.position + this.transform.forward;
+        this.targetPosition = this.transform.position + this.transform.forward;
+        moving = true;
+      } else {
+        //All other instructions stop moving
+        moving = false;
+
+
+      }
+    }
+
+    void Update() {
+      if(alive && moving) {
+        this.transform.position = targetPosition;
+        moving = false;
       }
     }
 
@@ -68,6 +85,7 @@ namespace RoadRules {
       instructionIndex = 0;
       repeatCount = 0;
       alive = true;
+      moving = false;
       OnReset.Invoke();
       DebugStateLabel();
     }
