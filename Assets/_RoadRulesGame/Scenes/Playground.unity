@@ -12963,6 +12963,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114411105558449188, guid: 7eff94a88c9ce4c978b7f9927c31230a,
+        type: 2}
+      propertyPath: instructionInput
+      value: 'forward
+
+        right
+
+        goto 0'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7eff94a88c9ce4c978b7f9927c31230a, type: 2}
   m_IsPrefabParent: 0
