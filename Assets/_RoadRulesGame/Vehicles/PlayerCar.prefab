@@ -44,7 +44,7 @@ GameObject:
   m_Layer: 11
   m_Name: PlayerCar
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419920477873682}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -7.53, y: 0, z: -1.49}
+  m_LocalPosition: {x: 16.85, y: 0, z: -1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4858404295735640}
@@ -579,8 +579,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f159987a6233d422cb80149232a3b5b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  instructionInput: forward 40
+  moveSpeed: 10
+  instructionInput: 'forward 1
+
+    left
+
+    forward 3'
   instructionIndex: 0
   repeatCount: 0
   OnReset:

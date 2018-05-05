@@ -12933,7 +12933,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4063573146255962, guid: 7eff94a88c9ce4c978b7f9927c31230a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.53
+      value: 16.85
       objectReference: {fileID: 0}
     - target: {fileID: 4063573146255962, guid: 7eff94a88c9ce4c978b7f9927c31230a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12962,11 +12962,6 @@ Prefab:
     - target: {fileID: 4063573146255962, guid: 7eff94a88c9ce4c978b7f9927c31230a, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114411105558449188, guid: 7eff94a88c9ce4c978b7f9927c31230a,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7eff94a88c9ce4c978b7f9927c31230a, type: 2}
@@ -18822,7 +18817,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4342835013218262, guid: 991812d60333547448b8521f12905986, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17.51
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 4342835013218262, guid: 991812d60333547448b8521f12905986, type: 2}
       propertyPath: m_LocalPosition.y
@@ -18830,7 +18825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4342835013218262, guid: 991812d60333547448b8521f12905986, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.38
+      value: 11.49
       objectReference: {fileID: 0}
     - target: {fileID: 4342835013218262, guid: 991812d60333547448b8521f12905986, type: 2}
       propertyPath: m_LocalRotation.x
@@ -55493,6 +55488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558371974}
   - component: {fileID: 1558371975}
+  - component: {fileID: 1558371976}
   m_Layer: 0
   m_Name: _Scene
   m_TagString: Untagged
@@ -55529,7 +55525,7 @@ MonoBehaviour:
   objectives:
   - {fileID: 288952292}
   state: 0
-  tickRate: 1
+  tickRate: 0.5
   agents:
   - {fileID: 1460626370}
   - {fileID: 810980234}
@@ -55549,6 +55545,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1558371976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558371973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43735d864553b4efe901cbbe4fae6370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1558931121
 Prefab:
   m_ObjectHideFlags: 0

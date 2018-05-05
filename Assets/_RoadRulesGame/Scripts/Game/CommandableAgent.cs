@@ -25,7 +25,6 @@ namespace RoadRules {
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
-    private Rigidbody _rigidbody;
     private Vector3 targetPosition;
 
     private void Awake() {
@@ -44,11 +43,17 @@ namespace RoadRules {
           Run(lastInstruction);
           repeatCount -= 1;
         } else if (instructionIndex < instructions.Count) {
-          Run(instructions[instructionIndex].instruction);
+          CommandProcessor.Command command = instructions[instructionIndex];
+          if(command.instruction == "goto") {
+            instructionIndex = command.arg0;
+            repeatCount = 0;
+          } else {
+            Run(command.instruction);
 
-          lastInstruction = instructions[instructionIndex].instruction;
-          repeatCount = instructions[instructionIndex].arg0 - 1;
-          instructionIndex += 1;
+            lastInstruction = instructions[instructionIndex].instruction;
+            repeatCount = instructions[instructionIndex].arg0 - 1;
+            instructionIndex += 1;  
+          }
         }
       }
       DebugStateLabel();
@@ -63,14 +68,19 @@ namespace RoadRules {
         //All other instructions stop moving
         moving = false;
 
-
+        if (instruction == "right") {
+          this.transform.Rotate(new Vector3(0f, 90f, 0f));
+        }
+        if (instruction == "left") {
+          this.transform.Rotate(new Vector3(0f, -90f, 0f));
+        }
       }
     }
 
     void Update() {
       if(alive && moving) {
-        this.transform.position = targetPosition;
-        moving = false;
+        this.transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        //moving = false;
       }
     }
 
@@ -110,6 +120,12 @@ namespace RoadRules {
       }
 
 #endif
+    }
+
+    void OnDrawGizmosSelected() {
+      if(moving) {
+        Gizmos.DrawSphere(this.targetPosition, 0.3f);
+      }
     }
 
 #endregion
