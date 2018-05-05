@@ -10,10 +10,14 @@ namespace RoadRules {
     public CommandableAgent targettedAgent;
 
     [Header("Object Links")]
-    public Text inputScript;
+    public InputField inputScript;
     public Button playButton;
     public Button stopButton;
     public PuzzleMaster puzzleMaster;
+
+    void Awake() {
+      this.inputScript.text = targettedAgent.instructionInput;
+    }
 
     public void StopClick() {      
       this.playButton.interactable = true;

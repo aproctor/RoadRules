@@ -69,6 +69,7 @@ namespace RoadRules {
       repeatCount = 0;
       alive = true;
       OnReset.Invoke();
+      DebugStateLabel();
     }
 
 

@@ -12,8 +12,17 @@ namespace RoadRules {
     public UnityEvent OnDie;
     public UnityEvent OnRespawn;
 
+    private Animator _animator;
+
+    void Awake() {
+      _animator = this.GetComponent<Animator>();
+    }
+
     public void Die() {
       if (alive) {
+        if(_animator != null) {
+          _animator.SetBool("Dead", true);
+        }
         OnDie.Invoke();
         alive = false;
       }
@@ -21,6 +30,9 @@ namespace RoadRules {
 
     public void Respawn() {
       if (!alive) {
+        if (_animator != null) {
+          _animator.SetBool("Dead", false);
+        }
         OnRespawn.Invoke();
         alive = true;
       }
