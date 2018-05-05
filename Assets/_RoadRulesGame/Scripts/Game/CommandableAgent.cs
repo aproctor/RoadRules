@@ -57,7 +57,7 @@ namespace RoadRules {
     private void Run(string instruction) {
       if(instruction == "forward") {
         //TODO nicer movement
-        this.targetPosition = this.transform.position + this.transform.forward;
+        this.targetPosition = this.transform.position + this.transform.forward * moveSpeed;
         moving = true;
       } else {
         //All other instructions stop moving

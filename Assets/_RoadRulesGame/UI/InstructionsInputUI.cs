@@ -21,6 +21,8 @@ namespace RoadRules {
     public RectTransform caratRoot;
     public Text caratLabel;
 
+    public GameObject gameOverUi;
+
     void Awake() {
       this.inputScript.text = targettedAgent.instructionInput;
     }
@@ -36,6 +38,13 @@ namespace RoadRules {
         }
 
       }
+    }
+
+    public void PuzzleCompleted() {
+      this.playButton.interactable = false;
+      this.stopButton.interactable = false;
+
+      this.gameOverUi.SetActive(true);
     }
 
     public void StopClick() {      
