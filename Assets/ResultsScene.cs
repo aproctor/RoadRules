@@ -25,6 +25,12 @@ public class ResultsScene : MonoBehaviour {
     RenderHighScores();
   }
 
+  void Update() {
+    if(Input.GetKeyDown(KeyCode.Escape)){
+      SceneLoader.LoadSplash();
+    }
+  }
+
   void RenderHighScores() {
     string locBuffer = "#Lines of Code\n\n";
     string fatBuffer = "#Fatalities\n\n";
