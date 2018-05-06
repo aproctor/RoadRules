@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class SplashScene : MonoBehaviour {
 	
-	// Update is called once per frame
-	void Update () {
-    if(Input.anyKeyDown) {
-      SceneLoader.LoadNextScene();
-    }
-	}
+  public void PlaygGame() {
+    SceneLoader.LoadNextScene();
+  }
 }
