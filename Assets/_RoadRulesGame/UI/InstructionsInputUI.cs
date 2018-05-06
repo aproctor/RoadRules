@@ -13,6 +13,9 @@ namespace RoadRules {
 
     public bool playing = false;
 
+    public Color playingColor;
+    public Color haltedColor;
+
     [Header("Object Links")]
     public InputField inputScript;
     public Button playButton;
@@ -38,6 +41,11 @@ namespace RoadRules {
           this.caratLabel.text = this.targettedAgent.repeatCount.ToString();
         } else {
           this.caratLabel.text = "";
+        }
+        if(this.targettedAgent.halted) {
+          this.caratRoot.GetComponent<Image>().color = haltedColor;
+        } else {
+          this.caratRoot.GetComponent<Image>().color = playingColor;
         }
 
       }

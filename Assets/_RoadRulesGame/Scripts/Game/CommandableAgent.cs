@@ -21,12 +21,14 @@ namespace RoadRules {
     [Header("Statefullness")]
     private bool alive = true;
     private bool moving = false;
+    public bool halted = false;
     public UnityEvent OnReset;
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private Vector3 targetPosition;
     private Animator animator;
+
 
     private void Awake() {
       this.originalPosition = this.transform.position;
@@ -40,7 +42,7 @@ namespace RoadRules {
     }
 
     public void Tick() {
-      if (alive) {
+      if (alive && !halted) {
         if (repeatCount > 0) {
           Run(lastInstruction);
           repeatCount -= 1;
@@ -70,7 +72,7 @@ namespace RoadRules {
 
     public void Halt() {
       moving = false;
-      instructionIndex = instructions.Count;
+      halted = true;
     }
 
     private void Run(string instruction) {
@@ -87,6 +89,9 @@ namespace RoadRules {
         }
         if (instruction == "left") {
           this.transform.Rotate(new Vector3(0f, -90f, 0f));
+        }
+        if (instruction == "halt") {
+          Halt();
         }
       }
     }
@@ -112,6 +117,7 @@ namespace RoadRules {
       repeatCount = 0;
       alive = true;
       moving = false;
+      halted = false;
       OnReset.Invoke();
       DebugStateLabel();
     }

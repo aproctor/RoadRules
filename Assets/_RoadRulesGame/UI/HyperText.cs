@@ -25,9 +25,11 @@ public class HyperText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if(Time.time > lastShiftTime + tickRate) {
-      Shift();
-      lastShiftTime = Time.time;
+    if(initialized) {
+      if (Time.time > lastShiftTime + tickRate) {
+        Shift();
+        lastShiftTime = Time.time;
+      }  
     }
 	}
 

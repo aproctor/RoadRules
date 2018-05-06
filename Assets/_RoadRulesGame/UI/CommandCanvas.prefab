@@ -948,6 +948,8 @@ MonoBehaviour:
   targettedAgent: {fileID: 0}
   caratJumpHeight: -14
   playing: 0
+  playingColor: {r: 0.29411766, g: 0.58431375, b: 0.8745099, a: 1}
+  haltedColor: {r: 0.8627451, g: 0.30980387, b: 0.32789987, a: 1}
   inputScript: {fileID: 114602789857195150}
   playButton: {fileID: 114065791465186036}
   stopButton: {fileID: 114031764607612596}
