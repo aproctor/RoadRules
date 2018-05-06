@@ -20,12 +20,14 @@ namespace RoadRules {
     public PuzzleMaster puzzleMaster;
     public RectTransform caratRoot;
     public Text caratLabel;
+    public Text titleLabel;
 
     public GameObject gameOverUi;
     public GameObject helpSection;
 
     void Awake() {
       this.inputScript.text = targettedAgent.instructionInput;
+      this.titleLabel.text = SceneLoader.CurrentSceneName();
     }
 
     void Update() {
