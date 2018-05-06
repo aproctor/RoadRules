@@ -82,6 +82,10 @@ namespace RoadRules {
     public void NextPuzzleClicked() {
       SceneLoader.LoadNextScene();
     }
+
+    public void ExitGameClicked() {
+      SceneLoader.LoadSplash();
+    }
   }
 
 }

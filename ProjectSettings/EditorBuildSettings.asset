@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_RoadRulesGame/Scenes/0_Splash.unity
+    path: Assets/_RoadRulesGame/Scenes/0_Road Rules.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/_RoadRulesGame/Scenes/1_Puzzle1.unity
+    path: Assets/_RoadRulesGame/Scenes/1_Straight Forward.unity
     guid: 453bcc72a294e4c19a96e8da1a18788a
   - enabled: 1
-    path: Assets/_RoadRulesGame/Scenes/2_Puzzle2.unity
+    path: Assets/_RoadRulesGame/Scenes/2_Around The Bend.unity
     guid: 3aa21bb1b262d441f9f98579c7583664
+  - enabled: 1
+    path: Assets/_RoadRulesGame/Scenes/3_Donuts.unity
+    guid: 517009e5effaa44b083a6018d2145ef7
   m_configObjects: {}
