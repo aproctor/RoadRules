@@ -19747,7 +19747,7 @@ Prefab:
     - target: {fileID: 114710138185905530, guid: 3198cf8c1d7ab4e66816c71b41a39b59,
         type: 2}
       propertyPath: instructionInput
-      value: forward 10
+      value: forward 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3198cf8c1d7ab4e66816c71b41a39b59, type: 2}

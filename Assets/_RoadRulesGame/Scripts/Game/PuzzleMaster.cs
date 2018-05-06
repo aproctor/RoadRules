@@ -19,6 +19,7 @@ namespace RoadRules {
 
     public float tickRate = 1f;
     public CommandableAgent[] agents;
+    private int totalTicks = 0;
 
     public UnityEvent OnPuzzleComplete;
 
@@ -31,14 +32,23 @@ namespace RoadRules {
             agent.Tick();
           }
           lastTickTime = Time.time;
+          totalTicks += 1;
         }
 
         if (IsPuzzleComplete()) {
           Debug.Log("YOU WIN");
+          int totalDead = 0;
           foreach (CommandableAgent agent in agents) {
             agent.Celebrate();
+            if(!agent.Alive) {
+              totalDead += 1;
+            }
           }
           OnPuzzleComplete.Invoke();
+
+          //TODO clean up score reporting
+          SceneLoader.LogScore(SceneLoader.CurrentSceneName(), totalTicks, agents[0].LinesOfCode, totalDead);
+
           state = PlayState.Complete;
         }
       }
@@ -53,6 +63,8 @@ namespace RoadRules {
     }
 
     public void Reset() {
+      totalTicks = 0;
+
       foreach (CommandableAgent agent in agents) {
         agent.Reset();
       }

@@ -29,6 +29,17 @@ namespace RoadRules {
     private Vector3 targetPosition;
     private Animator animator;
 
+    public int LinesOfCode {
+      get {
+        return instructions.Count;
+      }
+    }
+    public bool Alive {
+      get {
+        return alive;
+      }
+    }
+
 
     private void Awake() {
       this.originalPosition = this.transform.position;
