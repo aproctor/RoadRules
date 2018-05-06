@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 public static class SceneLoader {
 
-  public const int NUM_SCENES = 4;
+  public const int NUM_SCENES = 5;
   public static int curSceneIndex = 0;
 
   public static void LoadNextScene() {

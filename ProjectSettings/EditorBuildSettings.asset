@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_RoadRulesGame/Scenes/3_Donuts.unity
     guid: 517009e5effaa44b083a6018d2145ef7
+  - enabled: 1
+    path: Assets/_RoadRulesGame/Scenes/4_Short Cut.unity
+    guid: 244e3a0a1501a465988730742e7c0533
   m_configObjects: {}
