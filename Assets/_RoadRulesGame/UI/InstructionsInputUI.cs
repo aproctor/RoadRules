@@ -7,6 +7,10 @@ namespace RoadRules {
 
   public class InstructionsInputUI : MonoBehaviour {
 
+    private const float MIN_TIME_SCALE = 1f;
+    private const float MAX_TIME_SCALE = 5f;
+    private const float TIME_SCALE_INTERVAL = 1f;
+
     public CommandableAgent targettedAgent;
 
     public float caratJumpHeight = -15f;
@@ -25,12 +29,17 @@ namespace RoadRules {
     public Text caratLabel;
     public Text titleLabel;
 
+    public Button lessTimeButton;
+    public Button moreTimeButton;
+    public Text timeScaleLabel;
+
     public GameObject gameOverUi;
     public GameObject helpSection;
 
     void Awake() {
       this.inputScript.text = targettedAgent.instructionInput;
       this.titleLabel.text = SceneLoader.CurrentSceneName();
+      RenderTimeUI();
     }
 
     void Update() {
@@ -93,6 +102,20 @@ namespace RoadRules {
 
     public void ExitGameClicked() {
       SceneLoader.LoadSplash();
+    }
+
+    public void MoreTimeClicked() {
+      Time.timeScale = Mathf.Clamp(Time.timeScale + TIME_SCALE_INTERVAL, MIN_TIME_SCALE, MAX_TIME_SCALE);
+      RenderTimeUI();  
+    }
+    public void LessTimeClicked() {
+      Time.timeScale = Mathf.Clamp(Time.timeScale - TIME_SCALE_INTERVAL, MIN_TIME_SCALE, MAX_TIME_SCALE);
+      RenderTimeUI();
+    }
+    private void RenderTimeUI() {
+      moreTimeButton.interactable = (Time.timeScale < MAX_TIME_SCALE);
+      lessTimeButton.interactable = (Time.timeScale > MIN_TIME_SCALE);
+      timeScaleLabel.text = string.Format("{0,0}x", Time.timeScale);
     }
   }
 
