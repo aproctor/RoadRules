@@ -60,10 +60,12 @@ namespace RoadRules {
         if (command != null) {
           instructions.Add(command);
         } else {
-          Debug.LogWarningFormat("Ignoring invalid instruction <{0}>", trimmed);
-          instructions.Add(CommandProcessor.HALT);
+          Debug.LogWarningFormat("Halting on invalid instruction <{0}>", trimmed);
+          break;
         }
       }
+
+      instructions.Add(CommandProcessor.HALT);
 
       return instructions;
     }
